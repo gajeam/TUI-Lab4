@@ -44,7 +44,7 @@ export default class Index extends React.Component {
     }
 
     if(this.protonParticleViewRef) {
-      this.protonParticleViewRef.updateAttraction(result.fsr / 1024.0);
+      this.protonParticleViewRef.updateEmission(result.fsr, result.pot);
     }
 
   }
@@ -66,7 +66,6 @@ export default class Index extends React.Component {
         <div style={{...fullscreenStyle, width: '100vw', height: '100vh' }} id="overlay">
         </div>
         {this.renderWS()}
-        <WebAudioFont ref={(ref) => {this.webAudioFont = ref}}/>
       </div>
     );
   }
